@@ -1,0 +1,58 @@
+<div class="tp-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Contact us</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well-box">
+                    <p>Please fill out the form below and we will get back to you as soon as possible.</p>
+                    <form #adduserForm="ngForm" (ngSubmit)="addeditUser()">
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="control-label" >First Name <span class="required">*</span></label>
+                            <input  type="text" placeholder="First Name" class="form-control input-md" required [(ngModel)]="user.firstname" [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class=" control-label" >Last Name <span class="required">*</span></label>
+                            <div class=" ">
+                                <input  type="text" placeholder="Last name" class="form-control input-md" required [(ngModel)]="user.lastname" [ngModelOptions]="{standalone:true}">
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class=" control-label" >E-Mail <span class="required">*</span></label>
+                            <input  type="text" placeholder="E-Mail" class="form-control input-md" required [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class=" control-label" >Phone <span class="required">*</span></label>
+                            <input  type="text" placeholder="Phone" class="form-control input-md" required [(ngModel)]="user.phonenumber" [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class=" control-label">Password <span class="required">*</span></label>
+                            <input  type="password" placeholder="Phone" class="form-control input-md" required [(ngModel)]="user.password" [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <!-- Button -->
+                        <div class="form-group">
+                            <button id="submit" name="submit" class="btn btn-primary ">S'inscrire</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+</div>

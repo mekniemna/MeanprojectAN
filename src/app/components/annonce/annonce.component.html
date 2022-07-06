@@ -1,0 +1,123 @@
+<div class="tp-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Publier une annonce</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well-box">
+                    <p>Please fill out the form below and we will get back to you as soon as possible.</p>
+                    <div *ngIf="isuserAuth">
+                        <form #annonceForm="ngForm" (ngSubmit)="addAnnonce()">
+
+                            <!-- Form Name -->
+                            <h2 class="form-title">Annonce Description &amp; Prix</h2>
+
+                            <!-- Text input-->
+                            <div class="form-group row">
+                                <label class="col-md-12 control-label" for="title">Title<span
+                                        class="required">*</span></label>
+                                <div class="col-md-12">
+                                    <input id="title" name="title" type="text" placeholder="Title"
+                                        class="form-control input-md" required="" [(ngModel)]="annonce.title" [ngModelOptions]="{standalone:true}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="Address">Addresse</label>
+                                        <div class="">
+                                            <textarea class="form-control" id="Address" name="Address"
+                                                rows="6" [(ngModel)]="annonce.adresse" [ngModelOptions]="{standalone:true}">Addresse</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="control-label" for="state">Ville<span
+                                                class="required">*</span></label>
+                                        <div class="">
+                                            <input id="state" name="State" type="text" placeholder="Title"
+                                                class="form-control input-md" required="" [(ngModel)]="annonce.ville" [ngModelOptions]="{standalone:true}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Textarea -->
+                            <div class="form-group row">
+                                <label class="col-md-12 control-label" for="description">Descriptions</label>
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="description" name="description"
+                                        rows="6" [(ngModel)]="annonce.description" [ngModelOptions]="{standalone:true}">Descriptions</textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <!-- Select Basic -->
+                                    <div class="form-group">
+                                        <label class=" control-label" for="categorytype">Category Type</label>
+                                        <div class=" ">
+                                            <select id="categorytype" name="categorytype" class="form-control"  [(ngModel)]="annonce.categorie" [ngModelOptions]="{standalone:true}">
+                                                <option value="Immobilier">Immobilier</option>
+                                                <option value="Véhicules">Véhicules</option>
+                                                <option value="Emplois">Emplois</option>
+                                                <option value="Loisirs">Loisirs</option>
+                                                <option value="Multimédia">Multimédia</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <!-- Select Basic -->
+                                    <div class="form-group">
+                                        <label class=" control-label" for="price">Price</label>
+                                        <div class="">
+                                            <input id="state" name="State" type="text" placeholder="DT"
+                                                class="form-control input-md" required="" [(ngModel)]="annonce.prix" [ngModelOptions]="{standalone:true}">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h1> Sélectionner une image pour votre annonce</h1>
+                                    <button type="button" (click)='filePicker.click()'
+                                        class="btn btnsuccess">Sélectionner image</button>
+                                    <div class="form-group">
+                                        <input style="visibility: hidden;" type="file" class="form-control" #filePicker
+                                            (change)='onImageSelected($event)' />
+                                    </div>
+                                    <img [src]="imagePreview" style=" width: 300px; height:300px; margin-bottom :4rem;">
+                                </div>
+                            </div>
+
+                    
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-default">Publier</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

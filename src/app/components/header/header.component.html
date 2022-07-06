@@ -1,0 +1,59 @@
+
+<div class="top-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 top-message">
+                <p>Annonces...</p>
+            </div>
+            <div class="col-md-6 top-links">
+                <ul class="listnone">
+                    <li><a href="faq.html"> Help </a></li>
+                    <li *ngIf="!isuserAuthentified"><a routerLink="login"> se connecter </a>
+                   
+                    </li>
+                    <li *ngIf="!isuserAuthentified"><a routerLink="register">Inscrivez vous </a>
+                   
+                    </li>
+                    <li *ngIf="isuserAuthentified"><a (click)="logout()">Logout </a>
+                   
+                    </li>
+                    <li *ngIf="isuserAuthentified"><a routerLink="profil">Profile </a>
+                   
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-12 logo">
+                <div class="navbar-brand">
+                    <a routerLink=""><img src="assets/images/lorrho.png" alt="Logo" class="img-responsive"> logo</a>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12">
+                <div class="navigation" id="navigation">
+                    <ul>
+                        <li class="active"><a routerLink="create">Publier votre annonce </a>
+                           
+                        </li>
+                     
+                        <li *ngIf="isuserAuthentified"><a routerLink="">Mes annonces</a>
+                           
+                        </li>
+                       
+                        
+                        
+                        
+                       
+                    </ul>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="tp-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="margin-top: 10px;">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Se connecter</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="well-box">
+                    <p>.</p>
+                    <form #loginForm="ngForm" (ngSubmit)="loginuser()">
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="control-label" >Email <span class="required">*</span></label>
+                            <input type="email" placeholder="email" class="form-control input-md" required [(ngModel)]="login.email" [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class=" control-label" >Password<span class="required">*</span></label>
+                            <div class=" ">
+                                <input  type="password" placeholder="Last name" class="form-control input-md" required [(ngModel)]="login.password" [ngModelOptions]="{standalone:true}">
+                            </div>
+                        </div>
+                      
+                        
+                        <!-- Button -->
+                        <div class="form-group">
+                            <button id="submit" name="submit" class="btn btn-primary ">Se connecter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="well-box">
+                    <h2>Need Help ?</h2>
+                    <p>Are you an advertiser enquiring about advertising in You &amp; Your Wedding or on weddingvendor? Please <a href="#">click here </a>to contact the advertising team.</p>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+</div>
